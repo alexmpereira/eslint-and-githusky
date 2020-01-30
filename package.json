@@ -1,0 +1,28 @@
+{
+  "name": "eslint-and-githusky",
+  "version": "1.0.0",
+  "description": "Trabalhando com o ESlint e GitHusky",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepush": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmpereira/eslint-and-githusky.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmpereira/eslint-and-githusky/issues"
+  },
+  "homepage": "https://github.com/alexmpereira/eslint-and-githusky#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "husky": "^4.2.1"
+  }
+}

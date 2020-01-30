@@ -12,13 +12,13 @@ Trabalhando com o ESlint e GitHusky
       ? How would you like to define a style for your project? Use a popular style guide
       ? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
       ? What format do you want your config file to be in? JSON
-
+- No arquivo .eslintrc.json em rules, adicione: **"linebreak-style": 0**
 - Crie um arquivo **main.js** em uma pasta chamada **src**
     - Adicione o código de exemplo para dar erro
 - Testar com o seguinte comando: **./node_modules/.bin/eslint src/*.js**
+  - Se der erro apenas digite o comando para voltar o git add: **git reset**
 - Adicionar no package.json em scripts: **"lint": "./node_modules/.bin/eslint src/*.js"**
 - Desse modo é só rodar: **npm run lint**
-- Comentar a linha no arquivo pre-commit dentro da pasta _.git/hooks/pre-commit_: **exec git diff-index --check --cached $against --**
 
 #### Código errado
 
@@ -48,7 +48,14 @@ Trabalhando com o ESlint e GitHusky
 #### Instalando o GitHusky
 
 - npm install --save-dev husky
-- No package.json adicione o prepush no script: **"prepush": "npm run lint"**
+- No package.json adicione o seguinte:
+```json
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+```
 
 #### Padrões não permitidos:
 Strings armazenadas com aspas duplas;
